@@ -96,6 +96,124 @@
   .verify-btn small{
     display:block; font-weight:600; color:var(--muted); margin-top:-2px;
   }
+     /* === CYBER THEME OVERRIDES === */
+:root{
+  --bg:#070a12;
+  --card:#0c1222;
+  --card2:#0a1020;
+  --text:#e9f2ff;
+  --muted:#a8b7d6;
+  --accent:#4dfcff;          /* néon cyan */
+  --accent2:#b26cff;         /* néon violet */
+  --danger:#ff4d6d;
+  --border:rgba(77,252,255,.18);
+  --border2:rgba(178,108,255,.14);
+}
+
+/* fond “cyber” léger */
+body{
+  background:
+    radial-gradient(900px 500px at 10% 10%, rgba(77,252,255,.10), transparent 55%),
+    radial-gradient(900px 600px at 90% 20%, rgba(178,108,255,.10), transparent 55%),
+    radial-gradient(900px 600px at 40% 90%, rgba(77,252,255,.06), transparent 60%),
+    var(--bg);
+}
+
+/* header plus net */
+header{
+  background:rgba(7,10,18,.78);
+  border-bottom:1px solid rgba(77,252,255,.12);
+}
+
+/* cartes harmonisées + glow */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--card);
+  border:1px solid rgba(77,252,255,.12);
+  box-shadow:
+    0 0 0 1px rgba(178,108,255,.06) inset,
+    0 16px 40px rgba(0,0,0,.45);
+  position:relative;
+  overflow:hidden;
+}
+
+/* liseré néon en haut */
+.card::before{
+  content:"";
+  position:absolute; left:0; top:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+  opacity:.85;
+}
+
+/* hover cyber */
+.card:hover{
+  border-color:rgba(77,252,255,.30);
+  box-shadow:
+    0 0 0 1px rgba(77,252,255,.10) inset,
+    0 18px 50px rgba(0,0,0,.55);
+  transform:translateY(-1px);
+  transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+
+/* tags cohérents */
+.tag{
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+}
+.pill{
+  border:1px solid rgba(77,252,255,.28);
+  background:rgba(77,252,255,.08);
+  color:var(--text);
+}
+
+/* boutons “verified” / “repo” */
+.verify-btn{
+  border:1px solid rgba(77,252,255,.28);
+  background:linear-gradient(180deg, rgba(77,252,255,.14), rgba(77,252,255,.06));
+  box-shadow:0 0 0 1px rgba(77,252,255,.10) inset;
+}
+.verify-btn:hover{
+  background:linear-gradient(180deg, rgba(77,252,255,.22), rgba(77,252,255,.10));
+  border-color:rgba(77,252,255,.45);
+}
+
+/* petit sous-titre uniforme */
+.project-sub{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:6px;
+}
+
+/* “spec row” harmonisée dans les études de cas */
+.kvs{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px dashed rgba(255,255,255,.14);
+}
+.kv b{ color:var(--text); }
+
+/* détails plus cohérents */
+details{
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.02);
+}
+details[open]{
+  border-color:rgba(77,252,255,.22);
+  background:rgba(77,252,255,.04);
+}
+
+/* QR image style (si tu l’as déjà, garde celui-ci) */
+.case-image img{
+  border:1px solid rgba(77,252,255,.22);
+  box-shadow:0 0 0 1px rgba(77,252,255,.08) inset, 0 18px 50px rgba(0,0,0,.55);
+}
+
+/* badges code */
+code.badge{
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.15);
+  color:var(--muted);
+}
   </style>
 </head>
 <body>
@@ -146,7 +264,7 @@
       <div class="meta">
         Objectif : concevoir une architecture réseau d’entreprise multi-sites, sécurisée et prête pour l’automatisation.
       </div>
-
+      <div class="project-sub">Étude de cas • Réseau d’entreprise • Sécurité • Documentation</div>
       <details>
         <summary>Voir l’étude de cas</summary>
         <div class="kvs">
@@ -170,6 +288,7 @@
         Certification vérifiée
         <small>Voir le badge Credly</small>
       </span>
+      <span class="tag">Security</span>
     </a>
   </span>
 </div>
@@ -203,7 +322,7 @@
       <div class="meta">
         Objectif : mettre en place un LAN d’entreprise segmenté, résilient, et administrable (filaire + sans fil).
       </div>
-
+      <div class="project-sub">Étude de cas • Réseau d’entreprise • Sécurité • Documentation</div>
       <details>
         <summary>Voir l’étude de cas</summary>
         <div class="kvs">
@@ -226,6 +345,7 @@
         Certification vérifiée
         <small>Voir le badge Credly</small>
       </span>
+      <span class="tag">Security</span>
     </a>
   </span>
 </div>
@@ -262,7 +382,7 @@
       <div class="meta">
         Application SaaS pour PME : facturation / gestion / compta simplifiée, avec sécurité renforcée (2FA) et base de données relationnelle.
       </div>
-
+     <div class="project-sub">Étude de cas • Architecture applicative • API • Données • Sécurité (2FA)</div>
       <details>
         <summary>Voir l’étude de cas</summary>
 
@@ -327,6 +447,8 @@
               Voir le projet
               <small>Repository GitHub</small>
             </span>
+            <span class="tag">OWASP-ready</span>
+            <span class="tag">2FA</span>
           </a>
         </span>
           </div>
@@ -355,7 +477,7 @@
   <div class="meta">
     Projet de développement d’une application orientée gestion qui transforme le gaspillage en opportunité commerciale, fidélise les étudiants, et renforce notre image RSE .
   </div>
-
+  <div class="project-sub">Étude de cas • Application Web • Architecture </div>
   <details>
     <summary>Voir l’étude de cas</summary>
 
