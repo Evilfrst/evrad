@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mon Portfolio</title>
+  <meta name="description" content="Projets personnels orientés architecture des systèmes d'information : réseau (CCNA) et SaaS."/>
+   <style>
+    :root{
+      --bg:#0b0f17; --card:#121a2a; --text:#e8eefc; --muted:#a9b4d0;
+      --accent:#7aa2ff; --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.55 system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+    a{color:inherit}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(11,15,23,.86);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    nav{max-width:1100px;margin:0 auto;display:flex;gap:18px;align-items:center;padding:14px 18px}
+    nav a{text-decoration:none;color:var(--muted)}
+    nav a:hover{color:var(--text)}
+    .brand{color:var(--text);font-weight:800;margin-right:auto}
+    .wrap{max-width:1100px;margin:0 auto;padding:42px 18px}
+    .hero{display:grid;gap:14px;max-width:820px}
+    .hero h1{font-size:40px;line-height:1.1;margin:0}
+    .hero p{margin:0;color:var(--muted)}
+    .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none}
+    .btn.primary{background:var(--accent);color:#071021;font-weight:750}
+    .btn.ghost{border:1px solid var(--border);color:var(--text)}
+    .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:44px}
+    h2{margin:0;font-size:22px}
+    .hint{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-top:14px}
+    .card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;
+      box-shadow:0 8px 24px rgba(0,0,0,.25);
+    }
+    .card h3{margin:0;font-size:16px}
+    .meta{color:var(--muted);font-size:13px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,.12);padding:4px 8px;border-radius:999px}
+    details{border:1px solid var(--border);border-radius:14px;padding:12px 14px}
+    details[open]{background:rgba(255,255,255,.02)}
+    summary{cursor:pointer;color:var(--text);font-weight:650}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .kvs{display:grid;gap:8px;margin-top:10px}
+    .kv{display:grid;grid-template-columns:140px 1fr;gap:10px}
+    .kv b{color:var(--text)}
+    footer{border-top:1px solid var(--border);color:var(--muted);padding:22px 18px}
+    @media (max-width:950px){
+      .grid{grid-template-columns:1fr}
+      .cols{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+      .kv{grid-template-columns:1fr}
+    }
+    .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:6px 10px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.03);
+    color:var(--text);
+    font-size:12px; font-weight:750;
+    letter-spacing:.2px;
+  }
+
+  .pill .dot{
+    width:10px; height:10px; border-radius:999px;
+    background:var(--accent);
+    box-shadow:0 0 0 3px rgba(122,162,255,.18);
+  }
+
+  .verify-btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:10px 12px; border-radius:12px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(122,162,255,.10);
+    color:var(--text);
+    text-decoration:none;
+    font-weight:750;
+    transition:transform .12s ease, background .12s ease, border-color .12s ease;
+  }
+  .verify-btn:hover{
+    transform:translateY(-1px);
+    background:rgba(122,162,255,.16);
+    border-color:rgba(122,162,255,.35);
+  }
+
+  .verify-btn .icon{
+    width:18px; height:18px; display:inline-block;
+  }
+  .verify-btn small{
+    display:block; font-weight:600; color:var(--muted); margin-top:-2px;
+  }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="brand" href="#top">DSOH TCHAMEN LAN EVRAD — Architecture SI</a>
+    <a href="#projets">Projets</a>
+    <a href="#competences">Compétences</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top" class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Projets personnels — Architecture des Systèmes d’Information</h1>
+    <p>
+      Études de cas orientées <b>réseau d’entreprise</b> (CCNA), <b>sécurité</b>, <b>haute disponibilité</b>,
+      et <b>architecture applicative</b> (SaaS).
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#projets">Voir les projets</a>
+      <a class="btn ghost" href="#contact">Me contacter</a>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <div class="section-title" id="projets">
+    <h2>Projets</h2>
+    <div class="hint">Format “étude de cas” : objectif, architecture, compétences, livrables</div>
+  </div>
+
+  <section class="grid">
+    <!-- Projet 1 : CCNA ENSA -->
+    <article class="card">
+      <div>
+        <h3>CCNA — Réseautage d’entreprise, sécurité et automatisation</h3>
+        <div class="meta">Réseau d’entreprise · Sécurité · Automatisation · WAN</div>
+      </div>
+      <div class="tags">
+        <span class="tag">Routage dynamique</span>
+        <span class="tag">NAT</span>
+        <span class="tag">QoS</span>
+        <span class="tag">SDN</span>
+        <span class="tag">Virtualisation</span>
+      </div>
+      <div class="meta">
+        Objectif : concevoir une architecture réseau d’entreprise multi-sites, sécurisée et prête pour l’automatisation.
+      </div>
+
+      <details>
+        <summary>Voir l’étude de cas</summary>
+        <div class="kvs">
+          <div class="kv"><b>Objectif</b><span>Architecture réseau multi-sites (WAN) avec performance, sécurité et bases d’automatisation.</span></div>
+          <div class="kv"><b>Architecture</b><span>Routage dynamique + translation d’adresses + politiques de trafic (QoS) + principes SDN/virtualisation.</span></div>
+          <div class="kv"><b>Livrables</b><span>Schéma logique (topologie), configuration/simulation, plan de sécurisation, notes de décisions (trade-offs).</span></div>
+          <div class="kv">
+  <b>Certification</b>
+  <span>
+    <a class="verify-btn"
+       href="https://www.credly.com/badges/5904ea1a-a6fd-4fd3-8ad7-af8d3976daa8"
+       target="_blank" rel="noopener">
+      <span class="icon" aria-hidden="true">
+        <!-- Icone "shield-check" (SVG inline) -->
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M9 12.3l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>
+        Certification vérifiée
+        <small>Voir le badge Credly</small>
+      </span>
+    </a>
+  </span>
+</div>
+        </div>
+        <ul class="list">
+          <li>Routage dynamique</li>
+          <li>Traduction d’adresses réseau (NAT)</li>
+          <li>Bases de l’automatisation réseau</li>
+          <li>Qualité du service (QoS)</li>
+          <li>Atténuation des menaces à la sécurité</li>
+          <li>Réseaux pilotés par logiciel (SDN)</li>
+          <li>Virtualisation</li>
+          <li>Réseaux étendus (WAN)</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- Projet 2 : CCNA SRWE -->
+    <article class="card">
+      <div>
+        <h3>CCNA — Essentiels à la commutation, au routage et au sans fil</h3>
+        <div class="meta">LAN · Switching/Routing · Wi-Fi · Haute disponibilité</div>
+      </div>
+      <div class="tags">
+        <span class="tag">Connectivité d’accès</span>
+        <span class="tag">Sécurité d’accès</span>
+        <span class="tag">HA</span>
+        <span class="tag">Services IP</span>
+        <span class="tag">Contrôleur Wi-Fi</span>
+      </div>
+      <div class="meta">
+        Objectif : mettre en place un LAN d’entreprise segmenté, résilient, et administrable (filaire + sans fil).
+      </div>
+
+      <details>
+        <summary>Voir l’étude de cas</summary>
+        <div class="kvs">
+          <div class="kv"><b>Objectif</b><span>LAN sécurisé et hautement disponible : segmentation, redondance, services IP et WLAN managé.</span></div>
+          <div class="kv"><b>Architecture</b><span>Commutation + routage + mécanismes de redondance du premier saut + contrôleur LAN sans fil.</span></div>
+          <div class="kv"><b>Livrables</b><span>Plan d’adressage/VLAN, topologie, configurations, procédure de dépannage (runbook).</span></div>
+          <div class="kv">
+  <b>Certification</b>
+  <span>
+    <a class="verify-btn"
+       href="https://www.credly.com/badges/3111cfd7-19ca-4209-86ed-a7c62774cc96"
+       target="_blank" rel="noopener">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M9 12.3l2 2 4-4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>
+        Certification vérifiée
+        <small>Voir le badge Credly</small>
+      </span>
+    </a>
+  </span>
+</div>
+        </div>
+        <ul class="list">
+          <li>Connectivité d’accès</li>
+          <li>Sécurité d’accès</li>
+          <li>Redondance du premier saut</li>
+          <li>Haute disponibilité</li>
+          <li>Services IP</li>
+          <li>Routage</li>
+          <li>Protocoles de commutation</li>
+          <li>Contrôleurs LAN sans fil</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- Projet 3 : SaaS -->
+   <article class="card">
+      <div>
+        <h3>SaaS — Comptabilité pour PME</h3>
+        <div class="meta">Architecture applicative · API · Données · Sécurité</div>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Django</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">2FA</span>
+        <span class="tag">HTML/CSS</span>
+      </div>
+
+      <div class="meta">
+        Application SaaS pour PME : facturation / gestion / compta simplifiée, avec sécurité renforcée (2FA) et base de données relationnelle.
+      </div>
+
+      <details>
+        <summary>Voir l’étude de cas</summary>
+
+        <div class="kvs">
+          <div class="kv">
+            <b>Objectif</b>
+            <span>Proposer une solution web SaaS pour gérer les opérations comptables et administratives d’une PME (clients, factures, suivi).</span>
+          </div>
+
+          <div class="kv">
+            <b>Stack</b>
+            <span>
+              <code class="badge">Python</code>
+              <code class="badge">Django</code>
+              <code class="badge">FastAPI</code>
+              <code class="badge">PostgreSQL</code>
+              <code class="badge">2FA</code>
+              <code class="badge">HTML/CSS</code>
+              <code class="badge">Java</code>
+            </span>
+          </div>
+
+          <div class="kv">
+            <b>Architecture</b>
+            <span>
+              Application web structurée en couches :
+              <ul class="list">
+                <li><b>UI</b> : pages HTML/CSS (et composants Java si utilisés côté client)</li>
+                <li><b>Backend</b> : Django (logique applicative) + FastAPI (endpoints API dédiés, intégrations ou services)</li>
+                <li><b>Données</b> : PostgreSQL (modèle relationnel, contraintes, intégrité)</li>
+                <li><b>Sécurité</b> : authentification avec <b>2FA</b> (réduction du risque d’accès non autorisé)</li>
+              </ul>
+            </span>
+          </div>
+
+          <div class="kv">
+            <b>Décisions clés</b>
+            <span>
+              <ul class="list">
+                <li><b>PostgreSQL</b> pour la robustesse relationnelle (transactions, contraintes, cohérence des données)</li>
+                <li><b>Django</b> pour accélérer la livraison (structure, admin, sécurité applicative)</li>
+                <li><b>FastAPI</b> pour exposer une API moderne (services séparés / intégration future)</li>
+                <li><b>2FA</b> pour renforcer l’accès (compte utilisateur + second facteur)</li>
+              </ul>
+            </span>
+          </div>
+
+          <div class="kv">
+            <b>Lien</b>
+            <span>
+              <a href="https://github.com/Evilfrst/saaS-comptable-pme.git" target="_blank" rel="noopener">
+                GitHub — saaS-comptable-pme
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <p class="meta" style="margin:10px 0 0">
+          Évolutions “architecture SI” possibles : rôles/permissions fines, audit log, sauvegardes, observabilité (logs/metrics),
+          déploiement CI/CD, durcissement OWASP (headers, rate limiting, gestion secrets).
+        </p>
+      </details>
+    </article>
+  </section>
+
+  <!-- COMPETENCES -->
+  <div class="section-title" id="competences">
+    <h2>Compétences (synthèse)</h2>
+    <div class="hint">Orientées architecture SI : réseau + sécurité + opérabilité + applicatif</div>
+  </div>
+
+  <section class="cols">
+    <div class="card">
+      <h3>Réseau d’entreprise</h3>
+      <ul class="list">
+        <li>LAN : commutation, routage, services IP, WLAN managé</li>
+        <li>WAN : routage dynamique, interconnexion multi-sites</li>
+        <li>Haute disponibilité : redondance du premier saut</li>
+        <li>Performance : QoS</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Sécurité & modernisation</h3>
+      <ul class="list">
+        <li>Sécurité d’accès & atténuation des menaces</li>
+        <li>NAT & contrôle des flux</li>
+        <li>Réseaux pilotés par logiciel (SDN)</li>
+        <li>Virtualisation & bases d’automatisation réseau</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- A PROPOS -->
+  <div class="section-title" id="apropos">
+    <h2>À propos</h2>
+    <div class="hint">2–3 lignes, orientées valeur</div>
+  </div>
+  <section class="card">
+    <p class="meta" style="margin:0">
+      Je documente mes projets sous forme d’études de cas : objectifs, contraintes, décisions d’architecture et livrables.
+      Intérêt particulier pour l’architecture SI, les réseaux d’entreprise, la sécurité et l’exploitation.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="section-title" id="contact">
+    <h2>Contact</h2>
+    <div class="hint">Email · Telephone · GitHub</div>
+  </div>
+  <section class="card">
+    <div class="kvs">
+      <div class="kv"><b>Email</b><span>evraddsoh@gmail.com</span></div>
+      <div class="kv"><b>GitHub</b><span><a href="https://github.com/Evilfrst" target="_blank" rel="noopener">github.com/Evilfrst</a></span></div>
+      <div class="kv"><b>Telephone</b><span>0753615475</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="padding:0 18px">
+    © <span id="y"></span> DSOH EVRAD — Portfolio Architecture SI
+  </div>
+</footer>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
