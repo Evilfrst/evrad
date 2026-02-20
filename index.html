@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — Architecture SI (Cyber)</title>
   <meta name="description" content="Projets personnels orientés architecture SI & cybersécurité : CCNA (réseau) et SaaS (Python/Django/FastAPI/PostgreSQL/2FA)."/>
+
   <style>
     :root{
       --bg:#070a12;
@@ -113,6 +114,39 @@
     }
     h2{ margin:0; font-size:22px; letter-spacing:.2px; }
     .hint{ color:var(--muted); font-size:13px; }
+
+    /* FILTERS */
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+    }
+    .fbtn{
+      cursor:pointer;
+      border-radius:999px;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.18);
+      color:var(--text);
+      font-weight:850;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .fbtn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(77,252,255,.30);
+      background:rgba(77,252,255,.06);
+    }
+    .fbtn.active{
+      border-color:rgba(77,252,255,.45);
+      background:rgba(77,252,255,.12);
+      box-shadow:0 0 0 1px rgba(77,252,255,.10) inset;
+    }
+    .hidden{ display:none !important; }
 
     /* GRID (recruteur-friendly) */
     .grid{
@@ -257,9 +291,10 @@
       .two{ grid-template-columns:1fr; }
       .kv{ grid-template-columns:1fr; }
     }
-    /* Animations */
-.reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;}
-.reveal.show{opacity:1; transform:translateY(0);}
+
+    /* Animations reveal */
+    .reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;}
+    .reveal.show{opacity:1; transform:translateY(0);}
   </style>
 </head>
 
@@ -275,7 +310,8 @@
 </header>
 
 <main id="top" class="wrap">
-  <section class="hero">
+  <!-- HERO (reveal) -->
+  <section class="hero reveal">
     <h1>Portfolio — Architecture SI</h1>
     <p>
       Études de cas orientés (objectif, architecture, sécurité, preuves).
@@ -293,13 +329,30 @@
     </div>
   </section>
 
-  <div class="section-title" id="projets">
+  <!-- TITRE PROJETS (reveal) -->
+  <div class="section-title reveal" id="projets">
     <h2>Projets</h2>
-    <div class="hint">Les projets réseau (CCNA) sont mis en avant • preuves Credly • liens GitHub</div>
+    <div class="hint">Filtre par tags • preuves Credly • liens GitHub</div>
   </div>
+
+  <!-- FILTRES (reveal) -->
+  <div class="filters reveal" role="group" aria-label="Filtres projets">
+    <button class="fbtn" data-filter="all">Tous</button>
+    <button class="fbtn" data-filter="ccna">CCNA</button>
+    <button class="fbtn" data-filter="network">Réseau</button>
+    <button class="fbtn" data-filter="security">Sécurité</button>
+    <button class="fbtn" data-filter="automation">Automatisation</button>
+    <button class="fbtn" data-filter="wifi">Wi-Fi</button>
+    <button class="fbtn" data-filter="ha">HA</button>
+    <button class="fbtn" data-filter="app">Apps</button>
+    <button class="fbtn" data-filter="api">API</button>
+    <button class="fbtn" data-filter="db">DB</button>
+    <button class="fbtn" data-filter="2fa">2FA</button>
+  </div>
+
   <section class="grid">
-    <!-- PROJET 1 (full width) -->
-    <article class="card span-all reveal">
+    <!-- PROJET 1 -->
+    <article class="card span-all reveal" data-tags="ccna network security automation wan nat qos sdn virtualization">
       <div>
         <h3>CCNA — Réseautage d’entreprise, sécurité et automatisation</h3>
         <div class="meta">Réseau d’entreprise · Sécurité · Automatisation · WAN</div>
@@ -359,8 +412,8 @@
       </details>
     </article>
 
-    <!-- PROJET 2 (full width) -->
-    <article class="card span-all reveal">
+    <!-- PROJET 2 -->
+    <article class="card span-all reveal" data-tags="ccna network security wifi ha switching routing services">
       <div>
         <h3>CCNA — Essentiels à la commutation, au routage et au sans fil</h3>
         <div class="meta">LAN · Switching/Routing · Wi-Fi · Haute disponibilité</div>
@@ -421,7 +474,7 @@
     </article>
 
     <!-- PROJET 3 -->
-    <article class="card span-all reveal">
+    <article class="card span-all reveal" data-tags="app security api db 2fa python django fastapi postgres saas">
       <div>
         <h3>SaaS — Comptabilité pour PME</h3>
         <div class="meta">Architecture applicative · API · Données · Sécurité</div>
@@ -466,11 +519,11 @@
     </article>
 
     <!-- PROJET 4 -->
-    <article class="card span-all reveal">
+    <article class="card span-all reveal" data-tags="app web security project">
       <div>
         <h3>JustEcobox — Application / Plateforme</h3>
         <div class="meta">Architecture applicative · Web · Accès rapide</div>
-        <div class="project-sub">Étude de cas • Structure en couches • QR d’accès • GitHub</div>
+        <div class="project-sub">Étude de cas • Structure en couches • GitHub</div>
       </div>
 
       <div class="tags">
@@ -500,11 +553,18 @@
             </span>
           </div>
         </div>
+
+        <!-- Si tu veux l'image QR, décommente et mets l'image dans assets/justecobox-qr.png
+        <div class="case-image">
+          <img src="assets/justecobox-qr.png" alt="QR Code JustEcobox">
+        </div>
+        -->
       </details>
     </article>
   </section>
 
-  <div class="section-title" id="competences">
+  <!-- COMPETENCES -->
+  <div class="section-title reveal" id="competences">
     <h2>Compétences</h2>
     <div class="hint">Orientées architecture SI : réseau + sécurité + opérabilité + applicatif</div>
   </div>
@@ -534,7 +594,8 @@
     </article>
   </section>
 
-  <div class="section-title" id="apropos">
+  <!-- A PROPOS -->
+  <div class="section-title reveal" id="apropos">
     <h2>À propos</h2>
     <div class="hint">positionnement clair pour recruteur</div>
   </div>
@@ -545,7 +606,8 @@
     </p>
   </section>
 
-  <div class="section-title" id="contact">
+  <!-- CONTACT -->
+  <div class="section-title reveal" id="contact">
     <h2>Contact</h2>
     <div class="hint">Email · Telephone · GitHub</div>
   </div>
@@ -559,17 +621,55 @@
 </main>
 
 <footer>
-  <div class="wrap" style="padding:0 18px">© <span id="y"></span> Ton Nom — Portfolio Cyber</div>
+  <div class="wrap" style="padding:0 18px">© <span id="y"></span> DSOH EVRAD — Portfolio</div>
 </footer>
+
 <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
-  <script>
-  const els = document.querySelectorAll(".reveal");
-  const io = new IntersectionObserver((entries)=>{
+
+<script>
+  // --- REVEAL ---
+  const revealEls = document.querySelectorAll(".reveal");
+  const revealIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting) e.target.classList.add("show");
     });
   }, {threshold:0.12});
-  els.forEach(el=>io.observe(el));
+  revealEls.forEach(el=>revealIO.observe(el));
+
+  // --- FILTERS ---
+  const filterButtons = document.querySelectorAll(".fbtn");
+  const projectCards = document.querySelectorAll(".card[data-tags]");
+
+  function setActive(btn){
+    filterButtons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+  }
+
+  function applyFilter(filter){
+    projectCards.forEach(card=>{
+      const tags = (card.dataset.tags || "").split(/\s+/).filter(Boolean);
+      const show = (filter === "all") || tags.includes(filter);
+      card.classList.toggle("hidden", !show);
+      // pour éviter un état "invisible" après filtrage (reveal)
+      if(show) card.classList.add("show");
+    });
+  }
+
+  filterButtons.forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const f = btn.dataset.filter;
+      setActive(btn);
+      applyFilter(f);
+    });
+  });
+
+  // default filter = all
+  const defaultBtn = document.querySelector('.fbtn[data-filter="all"]');
+  if(defaultBtn){
+    setActive(defaultBtn);
+    applyFilter("all");
+  }
 </script>
+
 </body>
 </html>
