@@ -257,6 +257,9 @@
       .two{ grid-template-columns:1fr; }
       .kv{ grid-template-columns:1fr; }
     }
+    /* Animations */
+.reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease;}
+.reveal.show{opacity:1; transform:translateY(0);}
   </style>
 </head>
 
@@ -294,10 +297,9 @@
     <h2>Projets</h2>
     <div class="hint">Les projets réseau (CCNA) sont mis en avant • preuves Credly • liens GitHub</div>
   </div>
-
   <section class="grid">
     <!-- PROJET 1 (full width) -->
-    <article class="card span-all">
+    <article class="card span-all reveal">
       <div>
         <h3>CCNA — Réseautage d’entreprise, sécurité et automatisation</h3>
         <div class="meta">Réseau d’entreprise · Sécurité · Automatisation · WAN</div>
@@ -358,7 +360,7 @@
     </article>
 
     <!-- PROJET 2 (full width) -->
-    <article class="card span-all">
+    <article class="card span-all reveal">
       <div>
         <h3>CCNA — Essentiels à la commutation, au routage et au sans fil</h3>
         <div class="meta">LAN · Switching/Routing · Wi-Fi · Haute disponibilité</div>
@@ -419,7 +421,7 @@
     </article>
 
     <!-- PROJET 3 -->
-    <article class="card">
+    <article class="card span-all reveal">
       <div>
         <h3>SaaS — Comptabilité pour PME</h3>
         <div class="meta">Architecture applicative · API · Données · Sécurité</div>
@@ -464,7 +466,7 @@
     </article>
 
     <!-- PROJET 4 -->
-    <article class="card">
+    <article class="card span-all reveal">
       <div>
         <h3>JustEcobox — Application / Plateforme</h3>
         <div class="meta">Architecture applicative · Web · Accès rapide</div>
@@ -508,7 +510,7 @@
   </div>
 
   <section class="two">
-    <article class="card">
+    <article class="card reveal">
       <h3>Réseau d’entreprise</h3>
       <div class="meta">LAN/WAN · Haute dispo · Wi-Fi · Performance · Sécurisation</div>
       <ul class="list">
@@ -520,7 +522,7 @@
       </ul>
     </article>
 
-    <article class="card">
+    <article class="card reveal">
       <h3>Application & sécurité</h3>
       <div class="meta">API · PostgreSQL · Auth forte · Bases AppSec</div>
       <ul class="list">
@@ -536,7 +538,7 @@
     <h2>À propos</h2>
     <div class="hint">positionnement clair pour recruteur</div>
   </div>
-  <section class="card">
+  <section class="hero reveal">
     <p class="meta" style="margin:0">
       Je présente mes projets comme des études de cas : objectifs, architecture, sécurité et preuves.
       Intérêt particulier pour l’architecture SI, les réseaux d’entreprise et la cybersécurité (approche “defense in depth”).
@@ -547,7 +549,7 @@
     <h2>Contact</h2>
     <div class="hint">Email · Telephone · GitHub</div>
   </div>
-  <section class="card">
+  <section class="hero reveal">
     <div class="kvs">
       <div class="kv"><b>Email</b><span>evraddsoh@gmail.com</span></div>
       <div class="kv"><b>GitHub</b><span><a href="https://github.com/Evilfrst" target="_blank" rel="noopener">github.com/Evilfrst</a></span></div>
@@ -560,5 +562,14 @@
   <div class="wrap" style="padding:0 18px">© <span id="y"></span> Ton Nom — Portfolio Cyber</div>
 </footer>
 <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+  <script>
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add("show");
+    });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
