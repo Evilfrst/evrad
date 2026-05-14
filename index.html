@@ -276,6 +276,27 @@
     }
     .case-image img:hover{ transform:scale(1.04); }
 
+
+    .profile-wrap{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .profile-photo{
+      width:220px;
+      border-radius:24px;
+      border:2px solid rgba(77,252,255,.25);
+      box-shadow:0 20px 60px rgba(0,0,0,.55);
+      object-fit:cover;
+    }
+
+    .profile-content{
+      flex:1;
+      min-width:280px;
+    }
+
     /* ABOUT / CONTACT */
     .two{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px; }
 
@@ -312,20 +333,27 @@
 <main id="top" class="wrap">
   <!-- HERO (reveal) -->
   <section class="hero reveal">
-    <h1>Portfolio — Architecture SI</h1>
-    <p>
-      Études de cas orientés (objectif, architecture, sécurité, preuves).
-      Focus : <b>réseau d’entreprise</b> (CCNA), <b>authentification forte</b> (2FA), <b>API</b> & <b>données</b>.
-    </p>
-    <div class="kpis">
+    <div class="profile-wrap">
+      <img src="profile.jpg" alt="Photo de profil" class="profile-photo">
+
+      <div class="profile-content">
+        <h1>Portfolio — Architecture SI</h1>
+        <p>
+          Études de cas orientés (objectif, architecture, sécurité, preuves).
+          Focus : <b>réseau d’entreprise</b> (CCNA), <b>authentification forte</b> (2FA), <b>API</b> & <b>données</b>.
+        </p>
+
+        <div class="kpis">
       <span class="kpi"><span class="dot"></span> <b>CCNA</b> • Réseau & sécurité</span>
       <span class="kpi"><span class="dot"></span> <b>SaaS</b> • Python/Django/FastAPI</span>
       <span class="kpi"><span class="dot"></span> <b>DB</b> • PostgreSQL</span>
       <span class="kpi"><span class="dot"></span> <b>Security</b> • 2FA</span>
     </div>
-    <div class="btns">
-      <a class="btn primary" href="#projets">Voir les projets</a>
-      <a class="btn ghost" href="#contact">Me contacter</a>
+        <div class="btns">
+          <a class="btn primary" href="#projets">Voir les projets</a>
+          <a class="btn ghost" href="#contact">Me contacter</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -342,6 +370,7 @@
     <button class="fbtn" data-filter="automation">Automatisation</button>
     <button class="fbtn" data-filter="wifi">Wi-Fi</button>
     <button class="fbtn" data-filter="app">Apps</button>
+    <button class="fbtn" data-filter="devops">DevOps</button>
   </div>
 
   <section class="grid">
@@ -555,6 +584,98 @@
         -->
       </details>
     </article>
+
+    <!-- PROJET 5 -->
+    <article class="card span-all reveal" data-tags="automation app security devops ai docker kubernetes cicd monitoring fastapi openai grafana prometheus chatops">
+      <div>
+        <h3>ChatOps IA — Automatisation DevOps de bout en bout</h3>
+        <div class="meta">DevOps · IA · Automatisation · Observabilité · Conteneurisation</div>
+        <div class="project-sub">Architecture complète • FastAPI • Docker • Monitoring • CI/CD</div>
+      </div>
+
+      <div class="tags">
+        <span class="pill"><span class="dot"></span> DevOps IA</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Docker Compose</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Monitoring</span>
+        <span class="tag">ChatOps</span>
+      </div>
+
+      <div class="meta">
+        Objectif : automatiser les opérations DevOps grâce à un chatbot IA capable d’interagir avec les services, surveiller les métriques et centraliser les outils d’exploitation.
+      </div>
+
+      <details>
+        <summary>Voir l’étude de cas</summary>
+        <div class="kvs">
+          <div class="kv">
+            <b>Objectif</b>
+            <span>Créer une plateforme ChatOps intelligente permettant d’automatiser le monitoring, l’observabilité et certaines tâches DevOps via une interface conversationnelle.</span>
+          </div>
+
+          <div class="kv">
+            <b>Architecture</b>
+            <span>Frontend Web → Backend FastAPI → API OpenAI → Docker / Docker Compose → Stack Monitoring Prometheus & Grafana.</span>
+          </div>
+
+          <div class="kv">
+            <b>Fonctionnalités</b>
+            <span>Chatbot IA, orchestration des services, supervision des métriques, dashboards Grafana, API REST et déploiement conteneurisé.</span>
+          </div>
+
+          <div class="kv">
+            <b>Compétences démontrées</b>
+            <span>DevOps, observabilité, APIs, IA générative, automatisation, conteneurisation, monitoring et architecture scalable.</span>
+          </div>
+
+          <div class="kv">
+            <b>Stack</b>
+            <span>
+              <code class="badge">FastAPI</code>
+              <code class="badge">Docker</code>
+              <code class="badge">Prometheus</code>
+              <code class="badge">Grafana</code>
+              <code class="badge">OpenAI API</code>
+              <code class="badge">Python</code>
+              <code class="badge">CI/CD</code>
+            </span>
+          </div>
+
+          <div class="kv">
+            <b>Lien</b>
+            <span>
+              <a class="verify-btn"
+                 href="https://github.com/Evilfrst/Projet-Automatisation-DevOps-de-bout-en-bout-pour-un-chatbot-IA-evolutif-ChatOps.git"
+                 target="_blank" rel="noopener">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2l7 4v6c0 5-3 9-7 10C8 21 5 17 5 12V6l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Voir le projet<small>Repository GitHub</small></span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <ul class="list">
+          <li>Automatisation DevOps via IA conversationnelle</li>
+          <li>Backend API avec FastAPI</li>
+          <li>Intégration OpenAI</li>
+          <li>Monitoring avec Prometheus</li>
+          <li>Visualisation avec Grafana</li>
+          <li>Conteneurisation Docker</li>
+          <li>Architecture scalable et modulaire</li>
+          <li>Approche orientée observabilité et exploitation</li>
+        </ul>
+      </details>
+    </article>
+
   </section>
 
   <!-- COMPETENCES -->
