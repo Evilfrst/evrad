@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — Architecture SI (Cyber)</title>
-  <meta name="description" content="Projets personnels orientés architecture SI & cybersécurité : CCNA (réseau) et SaaS (Python/Django/FastAPI/PostgreSQL/2FA)."/>
+  <meta name="description" content="Portfolio d’administration systèmes et réseaux, DevOps, IoT sécurisé et cybersécurité : projets, compétences et certifications."/>
 
   <style>
     :root{
@@ -325,6 +325,7 @@
     <a class="brand" href="#top">DSOH TCHAMEN LAN EVRAD — Architecture SI</a>
     <a href="#projets">Projets</a>
     <a href="#competences">Compétences</a>
+    <a href="#certifications">Certifications</a>
     <a href="#apropos">À propos</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -371,6 +372,8 @@
     <button class="fbtn" data-filter="wifi">Wi-Fi</button>
     <button class="fbtn" data-filter="app">Apps</button>
     <button class="fbtn" data-filter="devops">DevOps</button>
+    <button class="fbtn" data-filter="iot">IoT</button>
+    <button class="fbtn" data-filter="linux">Linux / Cybersécurité</button>
   </div>
 
   <section class="grid">
@@ -676,6 +679,59 @@
       </details>
     </article>
 
+    <!-- PROJET 6 : IoT Agriculture -->
+    <article class="card span-all reveal" data-tags="iot devops security python docker mqtt tls agriculture">
+      <div>
+        <h3>Chaîne de supervision IoT sécurisée — Agriculture</h3>
+        <div class="meta">IoT · MQTT · TLS mutuel (mTLS) · Docker · Cybersécurité</div>
+        <div class="project-sub">Projet en cours de réalisation • Dépôt GitHub collaboratif</div>
+      </div>
+      <div class="tags">
+        <span class="pill"><span class="dot"></span> En cours de réalisation</span>
+        <span class="tag">Python</span><span class="tag">Mosquitto</span>
+        <span class="tag">MQTT</span><span class="tag">mTLS</span>
+        <span class="tag">ACL par topic</span><span class="tag">Docker Compose</span>
+      </div>
+      <div class="meta">Concevoir une chaîne de supervision IoT sécurisée pour un cas d’usage agricole, reliant des capteurs simulés à un superviseur via un broker MQTT protégé.</div>
+      <details>
+        <summary>Voir les détails du projet</summary>
+        <div class="kvs">
+          <div class="kv"><b>Architecture</b><span>Capteurs simulés → MQTT sur mTLS → broker Mosquitto → superviseur.</span></div>
+          <div class="kv"><b>Sécurité</b><span>Certificats TLS, authentification mutuelle obligatoire et contrôle d’accès aux topics par ACL.</span></div>
+          <div class="kv"><b>Supervision</b><span>Mesures simulées d’humidité du sol et de température, seuils d’alerte, détection de silence et d’équipements inconnus.</span></div>
+          <div class="kv"><b>Environnement</b><span>Docker Compose, OpenSSL, Python et Eclipse Mosquitto.</span></div>
+          <div class="kv"><b>Contribution</b><span>Projet réalisé en binôme / équipe. Dépôt de travail partagé.</span></div>
+          <div class="kv"><b>Lien</b><span><a class="verify-btn" href="https://github.com/RobinM258/examen-IOT-Agriculture" target="_blank" rel="noopener">Voir le projet<small>Repository GitHub</small></a></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- PROJET 7 : Programmation noyau Linux -->
+    <article class="card span-all reveal" data-tags="linux security kernel c ebpf virtualization cybersecurity">
+      <div>
+        <h3>Programmation du noyau Linux — Modules noyau et mini-EDR</h3>
+        <div class="meta">Linux Kernel · C · LKM · Système de fichiers · eBPF</div>
+        <div class="project-sub">Projet en cours de réalisation • Travaux pratiques TP1 à TP4</div>
+      </div>
+      <div class="tags">
+        <span class="pill"><span class="dot"></span> En cours de réalisation</span>
+        <span class="tag">C</span><span class="tag">Modules noyau</span>
+        <span class="tag">ftrace</span><span class="tag">VFS</span>
+        <span class="tag">eBPF</span><span class="tag">QEMU</span>
+      </div>
+      <div class="meta">Étudier le fonctionnement interne du noyau Linux, les modules chargeables, les appels système, les mécanismes du système de fichiers et la surveillance système.</div>
+      <details>
+        <summary>Voir les détails du projet</summary>
+        <div class="kvs">
+          <div class="kv"><b>Contenu</b><span>TP1 : environnement Linux et démarrage ; TP2 : appels système et modules ; TP3 : modules noyau et système de fichiers ; TP4 : mini-EDR et composants eBPF.</span></div>
+          <div class="kv"><b>Travaux pratiques</b><span>Module minimal, étude pédagogique de mécanismes ftrace/VFS et expérimentation d’un système de fichiers virtuel chiffrant les données.</span></div>
+          <div class="kv"><b>Environnement</b><span>Linux, langage C, QEMU, compilation de modules et outils eBPF.</span></div>
+          <div class="kv"><b>Précaution</b><span>Expérimentations réalisées dans un environnement virtuel isolé. Les mécanismes de dissimulation sont étudiés à des fins pédagogiques, jamais sur un système de production.</span></div>
+          <div class="kv"><b>Lien</b><span><a class="verify-btn" href="https://github.com/Evrad-dev/projet-rootkit-linux" target="_blank" rel="noopener">Voir le projet<small>Repository GitHub</small></a></span></div>
+        </div>
+      </details>
+    </article>
+
   </section>
 
   <!-- COMPETENCES -->
@@ -706,6 +762,36 @@
         <li>Données : PostgreSQL (transactions, intégrité)</li>
         <li>Sécurité : 2FA + base durcissement (audit, rate limiting, headers)</li>
       </ul>
+    </article>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section-title reveal" id="certifications">
+    <h2>Certifications professionnelles</h2>
+    <div class="hint">Titres et certifications obtenus</div>
+  </div>
+  <section class="grid">
+    <article class="card span-all reveal">
+      <div>
+        <h3>Titre professionnel — Administrateur système DevOps</h3>
+        <div class="meta">Diplôme obtenu · DDETS du Loiret · Niveau 6 du cadre national des certifications professionnelles</div>
+      </div>
+      <div class="tags">
+        <span class="pill"><span class="dot"></span> Diplôme obtenu</span>
+        <span class="tag">RNCP niveau 6</span>
+        <span class="tag">Administration système DevOps</span>
+        <span class="tag">Domaine d’activité 326</span>
+      </div>
+      <div class="kvs">
+        <div class="kv"><b>Organisme</b><span>DDETS du Loiret</span></div>
+        <div class="kv"><b>Intitulé officiel</b><span>Administrateur système DevOps</span></div>
+        <div class="kv"><b>Niveau</b><span>Niveau 6</span></div>
+        <div class="kv"><b>Date d’établissement</b><span>3 août 2026 — Orléans (Loiret)</span></div>
+        <div class="kv"><b>Domaine</b><span>Administration système DevOps</span></div>
+      </div>
+      <div class="btns">
+        <a class="verify-btn" href="Titre RNCP.pdf" target="_blank" rel="noopener">Consulter le diplôme<small>Ouvrir le diplôme officiel au format PDF</small></a>
+      </div>
     </article>
   </section>
 
